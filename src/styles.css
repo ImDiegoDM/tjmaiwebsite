@@ -1,9 +1,63 @@
+body,html{
+    font-family: 'IBM Plex Sans', sans-serif;
+    height: 100%;
+    /* overflow-x: hidden; */
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
 a.button{
     border-radius: 3.5rem;
     line-height: 2.5rem;
     padding: 0 2.6rem;
     font-size: 1.2rem;
     margin-top: .5rem;
+    text-transform: uppercase;
+}
+
+.content{
+    padding: 0 5rem;
+    margin: 4rem 0;
+}
+
+.mvvImg{
+    background-image: url('assets/mvv.jpg');
+    background-size: cover;
+    width: 320px;
+    height: 320px;
+    border-radius: 100%;
+    box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width:768px) {
+    .mvvImg{
+        width: 220px;
+        height: 220px;
+    }
+}
+
+h4::after{
+    background-color: #c4581b;
+    background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
+    position: relative;
+    top: 0.4em;
+    content: '';
+    height: 3px;
+    display: block;
+    width: 7rem;
+}
+
+h2::after{
+    background-color: #c4581b;
+    background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
+    position: relative;
+    top: 0.4em;
+    content: '';
+    height: 3px;
+    display: block;
+    width: 7rem;
+    margin: auto;
 }
 
 a,a:hover,a:focus{
