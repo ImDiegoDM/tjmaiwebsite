@@ -36,12 +36,26 @@ a{
 }
 
 a.button{
+  font-size: 1.2rem;
+}
+
+.button{
+  cursor: pointer;
+}
+
+a.button{
     border-radius: 3.5rem;
     line-height: 2.5rem;
     padding: 0 2.6rem;
-    font-size: 1.2rem;
     margin-top: .5rem;
     text-transform: uppercase;
+}
+
+button.button{
+  border-radius: 3.5rem;
+  background-color: transparent;
+  border: white 2px solid;
+  color: white;
 }
 
 .content{
@@ -71,8 +85,6 @@ a.button{
 }
 
 h4::after{
-    background-color: #c4581b;
-    background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
     position: relative;
     top: 0.4em;
     content: '';
@@ -82,15 +94,36 @@ h4::after{
 }
 
 h2::after{
-    background-color: #c4581b;
-    background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
     position: relative;
     top: 0.4em;
     content: '';
-    height: 3px;
+    height: 2px;
     display: block;
     width: 7rem;
     margin: auto;
+}
+
+h3::after{
+    position: relative;
+    top: 0.4em;
+    content: '';
+    height: 2px;
+    display: block;
+    width: 7rem;
+    margin: auto;
+}
+
+.c-white{
+  color: white;
+}
+
+h2.white::after,h3.white::after,h4.white::after{
+  background: #ffffff;
+}
+
+h2:not(.white)::after,h3:not(.white)::after,h4:not(.white)::after{
+  background-color: #c4581b;
+  background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
 }
 
 a,a:hover,a:focus{

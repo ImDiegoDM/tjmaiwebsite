@@ -1,5 +1,15 @@
 <div id="portfolio" class="degrade">
   <div class="">
-    works
+    <h2 class="white text-center c-white" style="font-size: 1.5rem;">Projetos</h2>
+    <div class="projects">
+      <div *ngFor="let project of projects" class="project justify-content-between">
+        <div class="image" [ngStyle]="{backgroundImage:'url('+project.imgUrl+')'}"></div>
+        <h3 class="white text-center c-white mt-2" style="font-size: 1.2rem;">{{project.title}}</h3>
+        <p class="c-white text-center">{{project.text | trim:numberChar()}}</p>
+        <div class="pb-3">
+          <button class="button m-auto d-block px-3" type="button" name="button">Ver mais</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

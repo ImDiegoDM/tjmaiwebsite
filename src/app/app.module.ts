@@ -12,6 +12,7 @@ import { BannerComponent } from './banner/banner.component';
 import { KnowComponent } from './know/know.component';
 import { MvvComponent } from './mvv/mvv.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { TrimPipe } from './trim.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     BannerComponent,
     KnowComponent,
     MvvComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    TrimPipe
   ],
   imports: [
     BrowserModule,
