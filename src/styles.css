@@ -1,3 +1,21 @@
+@keyframes show {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+}
+
+.show-animate{
+  animation-name: show;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+.hide-animate{
+  animation-name: show;
+  animation-duration: .3s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
 body,html{
     font-family: 'IBM Plex Sans', sans-serif;
     height: 100%;
@@ -7,6 +25,16 @@ body,html{
 body{
     overflow-x: hidden;
 }
+
+.round{
+  border-radius: 3.5rem;
+}
+
+a{
+  color: white!important;
+  cursor: pointer!important;
+}
+
 a.button{
     border-radius: 3.5rem;
     line-height: 2.5rem;
@@ -35,6 +63,11 @@ a.button{
         width: 220px;
         height: 220px;
     }
+}
+
+.degrade{
+  background-color: #c4581b;
+  background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
 }
 
 h4::after{

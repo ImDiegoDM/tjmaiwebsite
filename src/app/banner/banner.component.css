@@ -1,0 +1,54 @@
+#banner::before{
+    content: '';
+    background-image: url('/assets/bg-banner.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#banner::after {
+    background-size: 125% 100%;
+    height: 6rem;
+}
+
+#banner .header::before{
+    content: '';
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: .8rem;
+    background-color: #c4581b;
+    background-image: url('/assets/overlay.png'), linear-gradient(90deg, #c4581b, #bf301d 90%);
+}
+
+#banner::after {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxOTAwJyBoZWlnaHQ9JzE1MCcgdmlld0JveD0nMCAwIDE5MDAgMTUwJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJz48cGF0aCBkPSdNMCwyNS43QzI0My40LDg0LDU5Ni43LDE1MCw5NTAsMTUwYzM1My4zLDAsNzA2LjYtNjYsOTUwLTEyNC4zVjE1MEgwVjI1Ljd6JyBmaWxsPScjZmZmZmZmJy8+PC9zdmc+");
+    background-size: 100% 100%;
+    background-position: center;
+    bottom: -1px;
+    content: '';
+    height: 8rem;
+    left: 0;
+    right: -1px;
+    position: absolute;
+    box-shadow: inset 0 -1px 0 0 #ffffff;
+}
+
+#banner{
+    height: 98%;
+    position: relative;
+}
+
+#banner .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

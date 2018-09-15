@@ -1,0 +1,18 @@
+
+.tj-top-nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.tj-fixed-nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-item .nav-link.active{
+  background-color: rgba(255, 255, 255, 0.05);
+}

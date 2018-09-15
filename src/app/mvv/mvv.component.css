@@ -1,0 +1,18 @@
+
+.mvv{
+    margin-top: 10rem;
+}
+
+.mission{
+    margin-top: 5rem;
+}
+
+.mission,.vision,.value{
+    line-height: 2rem;
+}
+
+@media (max-width:992px) {
+    .vision{
+        margin-top: 5rem;
+    }
+}
