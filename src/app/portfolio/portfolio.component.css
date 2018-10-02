@@ -35,10 +35,72 @@
   box-shadow: inset 0 -1px 0 0 #ffffff;
 }
 
+.carousel{
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.carouselContainer{
+  position: relative;
+}
+
+.carouselContainer .nav button{
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+}
+
+.carouselContainer .nav button:focus{
+  outline: none;
+}
+
+.carouselContainer .nav button.left{
+  left: 0;
+}
+
+.carouselContainer .nav button.right{
+  right: 0;
+}
+
+.carouselContainer .nav button i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 27px;
+}
+
+.carouselContainer .nav button.left i{
+  transform: translate(-60%,-50%);
+}
+
+.carouselContainer .nav button.right i{
+  transform: translate(-37%,-50%);
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
 .projects{
   display: flex;
   flex-wrap: wrap;
   margin: 5rem 0;
+  flex: 0 0 100%;
+}
+
+.carousel{
+  display: flex;
+}
+
+.carouselContainer .nav button{
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: white;
 }
 
 .projects .project{

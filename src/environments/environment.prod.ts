@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  wpUrl:'https://wp.tjmaiengenharia.eng.br/wp-json/'
 };

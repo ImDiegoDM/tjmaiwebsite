@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WebsiteInfoService } from '../website-info.service';
+import { LoaderEventService } from '../loader-event.service';
 
 @Component({
   selector: 'app-know',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowComponent implements OnInit {
 
-  constructor() { }
+  know='';
+
+  constructor(private info:WebsiteInfoService,private loader:LoaderEventService) {
+    this.loader.addEvent();
+    info.getKnowField().then((response)=>{
+      this.loader.done();
+      this.know=response;
+    });
+  }
 
   ngOnInit() {
   }

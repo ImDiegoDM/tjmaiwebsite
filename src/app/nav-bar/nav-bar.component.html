@@ -1,17 +1,31 @@
-<div class="tj-top-nav mt-4">
-    <ul class="nav">
-        <li class="nav-item" *ngFor="let item of navItems">
-            <a [ngClass]="{'active':item.actived}" class="py-1 nav-link text-uppercase round">{{item.label}}</a>
-        </li>
-    </ul>
+<div *ngIf="dynamic">
+    <div class="tj-top-nav mt-4">
+        <ul class="nav">
+            <li class="nav-item" *ngFor="let item of navItems">
+                <a [ngClass]="{'active':item.actived}" href="{{item.url}}" class="py-1 nav-link text-uppercase round">{{item.label}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tj-fixed-nav py-2 degrade" [ngClass]="{'d-none':!displayFixedNav,'hide-animate':hideFixedNav,'show-animate':showFixedNav}">
+      <div class="d-inline align-middle ml-3">
+        <img src="assets/tj-text.png" style="height: 16px;" alt="">
+      </div>
+      <ul class="nav float-right">
+          <li class="nav-item" *ngFor="let item of navItems">
+              <a [ngClass]="{'active':item.actived}" href="{{item.url}}" class="py-1 nav-link text-uppercase round">{{item.label}}</a>
+          </li>
+      </ul>
+    </div>
 </div>
-<div class="tj-fixed-nav py-2 degrade" [ngClass]="{'d-none':!displayFixedNav,'hide-animate':hideFixedNav,'show-animate':showFixedNav}">
-  <div class="d-inline align-middle ml-3">
-    <img src="assets/tj-text.png" style="height: 16px;" alt="">
-  </div>
-  <ul class="nav float-right">
-      <li class="nav-item" *ngFor="let item of navItems">
-          <a [ngClass]="{'active':item.actived}" class="py-1 nav-link text-uppercase round">{{item.label}}</a>
-      </li>
-  </ul>
+<div *ngIf="!dynamic">
+    <div class="tj-fixed-nav py-2 degrade">
+        <div class="d-inline align-middle ml-3">
+            <img src="assets/tj-text.png" style="height: 16px;" alt="">
+        </div>
+        <ul class="nav float-right">
+            <li class="nav-item" *ngFor="let item of navItems">
+                <a [ngClass]="{'active':item.actived}" href="{{item.url}}" class="py-1 nav-link text-uppercase round">{{item.label}}</a>
+            </li>
+        </ul>
+    </div>
 </div>

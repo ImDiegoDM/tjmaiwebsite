@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,13 @@ import { KnowComponent } from './know/know.component';
 import { MvvComponent } from './mvv/mvv.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { TrimPipe } from './trim.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactComponent } from './contact/contact.component';
+import { WebsiteInfoService } from './website-info.service';
+import { GenericPageComponent } from './generic-page/generic-page.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderEventService } from './loader-event.service';
+
 
 
 @NgModule({
@@ -25,13 +33,18 @@ import { TrimPipe } from './trim.pipe';
     KnowComponent,
     MvvComponent,
     PortfolioComponent,
-    TrimPipe
+    TrimPipe,
+    ContactComponent,
+    GenericPageComponent,
+    LoaderComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes,{ enableTracing: false })
+    RouterModule.forRoot(appRoutes,{ enableTracing: false }),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [WebsiteInfoService,LoaderEventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

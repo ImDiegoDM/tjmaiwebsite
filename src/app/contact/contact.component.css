@@ -1,0 +1,59 @@
+.contact{
+  position: relative;
+  box-sizing: border-box;
+}
+
+.contact{
+  padding: 4rem 3rem;
+}
+
+.contact::before{
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxOTAwJyBoZWlnaHQ9JzE1MCcgdmlld0JveD0nMCAwIDE5MDAgMTUwJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJz48cGF0aCBkPSdNMCwyNS43QzI0My40LDg0LDU5Ni43LDE1MCw5NTAsMTUwYzM1My4zLDAsNzA2LjYtNjYsOTUwLTEyNC4zVjE1MEgwVjI1Ljd6JyBmaWxsPScjZmZmZmZmJy8+PC9zdmc+");
+  z-index: 10;
+  transform: scaleY(-1) translateY(-100%);
+  background-size: 100% 100%;
+  background-position: center;
+  bottom: 0;
+  content: '';
+  height: 8rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  box-shadow: inset 0 -1px 0 0 #ffffff;
+}
+
+.medias{
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.medias::before{
+  z-index: -10;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/imgs/footer.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%);
+}
+
+.medias a{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: solid 2px white;
+  border-radius: 50%;
+}
+
+.medias a img{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

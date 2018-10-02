@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { WebsiteInfoService } from '../website-info.service';
+import { LoaderEventService } from '../loader-event.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,22 +10,43 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   navItems=[
-    {label:'home',actived:true},
-    {label:'generic',actived:false},
+    {label:'home',url:'home',actived:true}
   ];
 
   showFixedNav=false;
   hideFixedNav=true;
   displayFixedNav=false;
 
-  constructor() { }
+  @Input() dynamic=true;
+
+  constructor(private info:WebsiteInfoService,private loader:LoaderEventService) {
+    this.getPages();
+  }
 
   ngOnInit() {
-    window.addEventListener('scroll', this.scroll, true); //third parameter
+    if(this.dynamic){
+      window.addEventListener('scroll', this.scroll, true); //third parameter
+    }else{
+      this.displayFixedNav=true;
+      this.showFixedNav=true;
+      this.hideFixedNav=false;
+    }
+  }
+
+  getPages(){
+    this.loader.addEvent();
+    this.info.getPages().then((response:any[])=>{
+      this.loader.done();
+      this.navItems = this.navItems.concat(response.map((item)=>{
+        return {label:item.title.rendered,url:'pages/'+item.id,actived:false};
+      }));
+    },(err)=>{});
   }
 
   ngOnDestroy() {
-    window.removeEventListener('scroll', this.scroll, true);
+    if(this.dynamic){
+      window.removeEventListener('scroll', this.scroll, true);
+    }
   }
 
   show(){
