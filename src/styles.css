@@ -79,6 +79,17 @@ button.button{
         width: 220px;
         height: 220px;
     }
+
+    div::after,div::before{
+        background-size: 150% 100%!important;
+    }
+}
+
+@media (max-width:576px) {
+    .content{
+        padding: 0 2rem;
+        margin: 4rem 0;
+    }
 }
 
 .degrade{

@@ -20,7 +20,13 @@
     min-height: 100%;
     filter: brightness(50%);
     z-index: -10;
-  }
+}
+
+@media (max-width:576px) {
+    #myVideo {
+        display: none;
+    }
+}
 
 #banner::after {
     background-size: 125% 100%;

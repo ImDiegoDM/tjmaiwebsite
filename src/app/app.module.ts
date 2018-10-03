@@ -20,6 +20,7 @@ import { WebsiteInfoService } from './website-info.service';
 import { GenericPageComponent } from './generic-page/generic-page.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderEventService } from './loader-event.service';
+import { EscapeHtmlPipePipe } from './escape-html-pipe.pipe';
 
 
 
@@ -36,7 +37,8 @@ import { LoaderEventService } from './loader-event.service';
     TrimPipe,
     ContactComponent,
     GenericPageComponent,
-    LoaderComponent
+    LoaderComponent,
+    EscapeHtmlPipePipe
   ],
   imports: [
     BrowserAnimationsModule,
